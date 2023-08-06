@@ -21,6 +21,10 @@ class SettingsSeeder extends Seeder
         [
             'code' => Settings::HOME_INFO_DESCRIPTION,
             'value' => 'описание сайта'
+        ],
+        [
+            'code' => Settings::MEMORIAL_PAGE_TEXT,
+            'value' => 'текст на странице мемориала'
         ]
     ];
     /**

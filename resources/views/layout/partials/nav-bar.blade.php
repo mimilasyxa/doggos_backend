@@ -7,9 +7,9 @@
         Наши собаки
     </div>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">Кобели</a>
-        <a class="dropdown-item" href="#">Суки</a>
-        <a class="dropdown-item" href="#">Мемориал</a>
+        <a class="dropdown-item" href="{{route('dogs.get', ['male'])}}">Кобели</a>
+        <a class="dropdown-item" href="{{route('dogs.get', ['female'])}}">Суки</a>
+        <a class="dropdown-item" href="{{route('dogs.get.memorial')}}">Мемориал</a>
     </div>
     <div class="p-2 mx-auto btn btn-secondary">Помёты</div>
     <div class="p-2 mx-auto btn btn-secondary">Щенки</div>
