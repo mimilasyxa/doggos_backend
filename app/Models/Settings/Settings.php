@@ -20,6 +20,7 @@ class Settings extends Model
     const HEADER_IMAGE = 'header_image';
     const HOME_INFO_TITLE = 'home_info_title';
     const HOME_INFO_DESCRIPTION = 'home_info_description';
+    const MEMORIAL_PAGE_TEXT = 'memorial_page_text';
     /**
      * @return int
      */
