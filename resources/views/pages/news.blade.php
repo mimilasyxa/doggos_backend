@@ -8,16 +8,24 @@
 </head>
 <body class="antialiased">
 <div class="container mt-5" style="border:1px solid black">
-@include('layout.partials.header')
-@include('layout.partials.nav-bar')
+    @include('layout.partials.header')
+    @include('layout.partials.nav-bar')
     <div class="text-center">Новости питомника</div>
-    @foreach($news->items() as $item)
-        <div>
-        <div class="news-title">{{$item->getTitle()}}</div>
-        <div class="news-summary">{{$item->getSummary()}}</div>
-            <a href="{{route('news.get.one', [$item->getSlug()])}}">Продолжить чтение</a>
-        </div>
-    @endforeach
+    <div class="col-10 mx-auto">
+        @foreach($news->items() as $item)
+            <div>
+                <div class="news-title">{{$item->getTitle()}}</div>
+                <div class="news-summary text-center">{{$item->getSummary()}}</div>
+                <div class="col-2 mx-auto">
+                <a  class="w-100 text-black btn btn-secondary"
+                                                        href="{{route('news.get.one', [$item->getSlug()])}}">Продолжить
+                        чтение</a>
+                </div>
+                <br>
+            </div>
+        @endforeach
+    </div>
+    {{$news->links('vendor.pagination.custom')}}
 </div>
 @include('layout.partials.footer')
 </body>

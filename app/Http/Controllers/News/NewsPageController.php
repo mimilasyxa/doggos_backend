@@ -15,7 +15,7 @@ class NewsPageController extends Controller
         $news = $settingsService->getNews();
         return view('pages.news',
         [
-            'news' => $news->simplePaginate(self::ITEMS_ON_PAGE)
+            'news' => $news->paginate(self::ITEMS_ON_PAGE)
         ]);
     }
 
