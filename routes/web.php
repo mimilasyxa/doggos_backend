@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\MainPage\MainPageController;
+use App\Http\Controllers\News\NewsPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [MainPageController::class, 'getPage'])->name('main');
+Route::prefix('news')->group(function () {
+    Route::get('/', [NewsPageController::class, 'getPage'])->name('news');
+    Route::get('/{slug}', [NewsPageController::class, 'getOnePage'])->name('news.get.one');
 });
+
